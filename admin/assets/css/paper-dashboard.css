@@ -17,6 +17,11 @@
 .ct-blue {
     stroke: #7A9E9F !important;
 }
+.turbolinks-progress-bar {
+  height: 20px;
+  background-color: green;
+  z-index: 9999999;
+}
 .dashed-box{
     border: 3px dashed #ccc;
   height: 75%;

@@ -13,8 +13,16 @@
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
  */
-
-
+ console.log("rendering");
+$(document).on('turbolinks:click', function() {
+  console.log("nprogress start");
+  NProgress.start();
+});
+$(document).on('turbolinks:render', function() {
+  console.log("nprogress stop");
+  NProgress.done();
+  NProgress.remove();
+});
 var fixedTop = false;
 var transparent = true;
 var navbar_initialized = false;
@@ -54,44 +62,6 @@ if (isAdvancedUpload) {
   .on('drop', function(e) {
     droppedFiles = e.originalEvent.dataTransfer.files;
   });
-
-}
-$(document).on('click', '.navbar-toggle', function(){
-  $toggle = $(this);
-  if(pd.misc.navbar_menu_visible == 1) {
-    $('html').removeClass('nav-open');
-    pd.misc.navbar_menu_visible = 0;
-    $('#bodyClick').remove();
-    setTimeout(function(){
-      $toggle.removeClass('toggled');
-    }, 400);
-  } else {
-    setTimeout(function(){
-      $toggle.addClass('toggled');
-    }, 430);
-
-    div = '<div id="bodyClick"></div>';
-    $(div).appendTo("body").click(function() {
-      $('html').removeClass('nav-open');
-      pd.misc.navbar_menu_visible = 0;
-      $('#bodyClick').remove();
-      setTimeout(function(){
-        $toggle.removeClass('toggled');
-      }, 400);
-    });
-
-    $('html').addClass('nav-open');
-    pd.misc.navbar_menu_visible = 1;
-  }
-});
-
-// activate collapse right menu when the windows is resized
-$(window).resize(function(){
-    if($(window).width() <= 991){
-        pd.initRightMenu();
-    }
-});
-//-------drag and drop-----
 var drop = $("#bulk_upload");
 drop.on('dragenter', function (e) {
   $(".dashed-box").css({
@@ -203,7 +173,43 @@ var data;
                }
 });
         });
-             
+}
+$(document).on('click', '.navbar-toggle', function(){
+  $toggle = $(this);
+  if(pd.misc.navbar_menu_visible == 1) {
+    $('html').removeClass('nav-open');
+    pd.misc.navbar_menu_visible = 0;
+    $('#bodyClick').remove();
+    setTimeout(function(){
+      $toggle.removeClass('toggled');
+    }, 400);
+  } else {
+    setTimeout(function(){
+      $toggle.addClass('toggled');
+    }, 430);
+
+    div = '<div id="bodyClick"></div>';
+    $(div).appendTo("body").click(function() {
+      $('html').removeClass('nav-open');
+      pd.misc.navbar_menu_visible = 0;
+      $('#bodyClick').remove();
+      setTimeout(function(){
+        $toggle.removeClass('toggled');
+      }, 400);
+    });
+
+    $('html').addClass('nav-open');
+    pd.misc.navbar_menu_visible = 1;
+  }
+});
+
+// activate collapse right menu when the windows is resized
+$(window).resize(function(){
+    if($(window).width() <= 991){
+        pd.initRightMenu();
+    }
+});
+
         
 
 pd = {

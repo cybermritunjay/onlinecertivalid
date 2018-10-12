@@ -130,8 +130,10 @@
                     console.log(data);
                     if (data == "all ok") {
                         document.getElementById( 'event_form' ).innerHTML= "<h1>EventCreated Sucessfully!!!</h1>";
+                        $('#event_model').modal('hide');
                     }else{
                         alert("Something Went Wrong!!!!!!!!!!!!!!!!!!");
+                        
                     }
                 });
                 

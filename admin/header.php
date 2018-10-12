@@ -6,7 +6,7 @@
 <link rel="icon" href="../img/logo.ico">	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<title><?php echo $title; ?></title>
-
+    <script type="text/javascript" src="assets/js/turbolinks.js" defer></script>
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
@@ -29,12 +29,12 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/themify-icons.css" rel="stylesheet">
-
+    <script src='assets/js/nprogress.js'></script>
+<link rel='stylesheet' href='assets/css/nprogress.css'/>
 </head>
 <body>
-
 <div class="wrapper">
-    <div class="sidebar" data-background-color="white" data-active-color="danger">
+    <div class="sidebar" data-background-color="white" data-active-color="danger" data-turbolinks-permanent>
 
     <!--
 		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
@@ -80,7 +80,7 @@
     </div>
 
     <div class="main-panel">
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default" data-turbolinks-permanent>
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle">

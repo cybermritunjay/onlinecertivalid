@@ -40,9 +40,7 @@ if (!in_array($eventName, $event_id)) {
             <div class="dashed-box">
                 <input type="file" name="file" id="bulk_upload">
                 <div class="cont">
-                <i class="fa fa-cloud-upload" style="    font-size: 400%;
-    color: #8E99A5;
-    position: relative;"></i>
+                <i class="fa fa-cloud-upload" style="font-size: 400%;color: #8E99A5;position: relative;"></i>
                     <div class="tit">
                         Drag &amp; Drop
                       </div>
@@ -145,5 +143,7 @@ if (!in_array($eventName, $event_id)) {
             </div>
         </div>
 
+
                 <script type="text/javascript" src="assets/js/papaparse.js"></script>
+ 
 <?php require 'footer.php'; ?> 
